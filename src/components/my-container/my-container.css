@@ -4,12 +4,28 @@
 
 ul {
   list-style: none;
+  padding-left: 0;
+}
+.container-wrapper {
+  overflow: hidden;
+}
+
+
+.item-centered {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .card-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.slider-button-container input[type="radio"]{
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 580px) {

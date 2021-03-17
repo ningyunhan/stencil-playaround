@@ -2,21 +2,20 @@
   display: block;
 }
 
-.card {
-  width: 100px;
-  height: 200px;
-  -webkit-box-shadow: 2px 4px 27px -7px rgba(0,0,0,0.62); 
-  box-shadow: 2px 4px 27px -7px rgba(0,0,0,0.62);
-  border-radius: 10px;
-}
-
-
 .item-centered {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
+.card {
+  width: 200px;
+  height: 300px;
+  -webkit-box-shadow: 2px 4px 27px -7px rgba(0,0,0,0.62); 
+  box-shadow: 2px 4px 27px -7px rgba(0,0,0,0.62);
+  border-radius: 10px;
+}
+
 
 @media only screen and (max-width: 580px) {
   .card {

@@ -6,14 +6,13 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class MyCard {
-
   render() {
     return (
-      <li>
+      <div>
         <div class="card item-centered">
           <slot/>
         </div>
-      </li>
+      </div>
     );
   }
 
