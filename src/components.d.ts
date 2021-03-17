@@ -8,8 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyCard {
     }
+    interface MyCardGroup {
+    }
     interface MyContainer {
-        "cardsPerPage": number;
     }
 }
 declare global {
@@ -19,6 +20,12 @@ declare global {
         prototype: HTMLMyCardElement;
         new (): HTMLMyCardElement;
     };
+    interface HTMLMyCardGroupElement extends Components.MyCardGroup, HTMLStencilElement {
+    }
+    var HTMLMyCardGroupElement: {
+        prototype: HTMLMyCardGroupElement;
+        new (): HTMLMyCardGroupElement;
+    };
     interface HTMLMyContainerElement extends Components.MyContainer, HTMLStencilElement {
     }
     var HTMLMyContainerElement: {
@@ -27,17 +34,20 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-card": HTMLMyCardElement;
+        "my-card-group": HTMLMyCardGroupElement;
         "my-container": HTMLMyContainerElement;
     }
 }
 declare namespace LocalJSX {
     interface MyCard {
     }
+    interface MyCardGroup {
+    }
     interface MyContainer {
-        "cardsPerPage"?: number;
     }
     interface IntrinsicElements {
         "my-card": MyCard;
+        "my-card-group": MyCardGroup;
         "my-container": MyContainer;
     }
 }
@@ -46,6 +56,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-card": LocalJSX.MyCard & JSXBase.HTMLAttributes<HTMLMyCardElement>;
+            "my-card-group": LocalJSX.MyCardGroup & JSXBase.HTMLAttributes<HTMLMyCardGroupElement>;
             "my-container": LocalJSX.MyContainer & JSXBase.HTMLAttributes<HTMLMyContainerElement>;
         }
     }

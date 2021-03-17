@@ -1,4 +1,4 @@
-import { Component, h, Element, Prop, State } from '@stencil/core';
+import { Component, h, Element } from '@stencil/core';
 
 @Component({
   tag: 'my-container',
@@ -7,36 +7,40 @@ import { Component, h, Element, Prop, State } from '@stencil/core';
 })
 export class MyContainer {
   @Element() el: HTMLElement;
-  @Prop() cardsPerPage: number = 3;
-  @State() currentPage: number = 1;
 
-  private slidesCount: number = 0;
   private pages: number;
-  private shadowRoot;
+  private currentPage: number = 1;
+  private cardContainer: HTMLElement;
 
   connectedCallback() {
-    this.slidesCount = this.el.querySelectorAll('my-card').length;
-    const cardsNum = this.cardsPerPage || 3;
-    this.pages = Math.ceil(this.slidesCount / cardsNum);
+    this.pages = this.el.querySelectorAll('my-card-group').length;
+  }
 
-    this.shadowRoot = this.el.shadowRoot;
-    // this.shadowRoot.querySelector('ul').style.width = `${this.pages > 1 ? 1 : 1}00%`
-  };
-
-  private onClickSlider = (page) => {
+  private onClickSlider = page => {
+    if (this.currentPage === page) return;
+    this.cardContainer = this.el.shadowRoot.querySelector('.card-container');
+    this.cardContainer.style.transform = `translateX(${-100 * (page - 1)}%)`;
     this.currentPage = page;
   };
 
   render() {
     return (
-      <div class="container-wrapper">
+      <div class="card-wrapper">
         <div class="card-container">
-          <slot/>
+          <slot />
         </div>
         {this.pages > 1 ? (
-          <div class="slider-button-container item-centered" style={{"marginTop": "3rem"}}>
+          <div class="slider-button-container item-centered" style={{ marginTop: '3rem' }}>
             {Array.from(Array(this.pages)).map((item, index) => (
-              <input type="radio" key={index} name="test" checked={index + 1 === this.currentPage} onClick={() => {this.onClickSlider(index + 1)}}/>
+              <input
+                type="radio"
+                key={index}
+                name="test"
+                checked={index + 1 === this.currentPage}
+                onClick={() => {
+                  this.onClickSlider(index + 1);
+                }}
+              />
             ))}
           </div>
         ) : null}

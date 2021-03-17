@@ -2,14 +2,9 @@
   display: block;
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-.container-wrapper {
+.card-wrapper {
   overflow: hidden;
 }
-
 
 .item-centered {
   display: flex;
@@ -19,12 +14,14 @@ ul {
 }
 .card-container {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
   align-items: center;
+  transition: transform .5s ease-in-out;
+
 }
 
-.slider-button-container input[type="radio"]{
+.slider-button-container input[type='radio'] {
   cursor: pointer;
 }
 
