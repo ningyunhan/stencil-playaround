@@ -9,6 +9,7 @@ export namespace Components {
     interface MyCard {
     }
     interface MyContainer {
+        "cardsPerPage": number;
     }
 }
 declare global {
@@ -33,6 +34,7 @@ declare namespace LocalJSX {
     interface MyCard {
     }
     interface MyContainer {
+        "cardsPerPage"?: number;
     }
     interface IntrinsicElements {
         "my-card": MyCard;

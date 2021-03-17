@@ -7,31 +7,36 @@
 
     <script type="module" src="/build/my-slider.esm.js"></script>
     <script nomodule src="/build/my-slider.js"></script>
+    <style>
+      .b-container {
+        margin-top: 5rem;
+      }
+
+      div.content {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
-
-    <my-container>
-      <my-card>
-        <div>
-          card1
-        </div>
-      </my-card>
-      <my-card>
-        <div>
-          card2
-        </div>
-      </my-card>
-      <my-card>
-        <div>
-          card3
-        </div>
-      </my-card>
-      <my-card>
-        <div>
-          card3
-        </div>
-      </my-card>
-    </my-container>
-
+    
+    <div class="b-container">
+      <my-container cards-per-page="2">
+        <my-card>
+          <div class="content">
+            card1
+          </div>
+        </my-card>
+        <my-card>
+          <div class="content">
+            card2
+          </div>
+        </my-card>
+        <my-card>
+          <div class="content">
+            card3
+          </div>
+        </my-card>
+      </my-container>
+    </div>
   </body>
 </html>

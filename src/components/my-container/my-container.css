@@ -2,6 +2,9 @@
   display: block;
 }
 
+ul {
+  list-style: none;
+}
 .card-container {
   display: flex;
   flex-flow: row wrap;

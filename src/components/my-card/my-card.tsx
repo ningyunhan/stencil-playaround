@@ -9,9 +9,11 @@ export class MyCard {
 
   render() {
     return (
-      <div class="card item-centered">
-        <slot/>
-      </div>
+      <li>
+        <div class="card item-centered">
+          <slot/>
+        </div>
+      </li>
     );
   }
 
