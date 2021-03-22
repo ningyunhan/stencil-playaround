@@ -3,7 +3,7 @@ import { Component, h, Element } from '@stencil/core';
 @Component({
   tag: 'my-container',
   styleUrl: 'my-container.css',
-  shadow: true,
+  shadow: false,
 })
 export class MyContainer {
   @Element() el: HTMLElement;
@@ -25,7 +25,7 @@ export class MyContainer {
 
   render() {
     return (
-      <div class="card-wrapper">
+      <div class="card-wrapper p-0.5">
         <div class="card-container">
           <slot />
         </div>

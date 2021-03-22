@@ -3,7 +3,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'my-card-group',
   styleUrl: 'my-card-group.css',
-  shadow: true,
+  shadow: false,
 })
 export class MyCardGroup {
   render() {
